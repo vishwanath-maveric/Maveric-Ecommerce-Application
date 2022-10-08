@@ -1,0 +1,161 @@
+<div class="wrap">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <img src="../../../../assets/wlogo.png" alt="..." height="36" />
+      <h5>Ecommerce</h5>
+    </div>
+
+    <ul class="list-unstyled components">
+      <p><b>MENU</b></p>
+      <li class="active">
+        <a class="nav-link" href="#"
+          ><i class="fa fa-home"></i> {{ "header.home" | translate }}
+          <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user_role == 'buyer'">
+        <a class="nav-link" routerLink="/my-order"
+          ><i class="fa-solid fa-basket-shopping"></i>
+          {{ "header.order" | translate }}</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user_role == 'admin'">
+        <a class="nav-link" routerLink="/all-order"
+          ><i class="fa-solid fa-basket-shopping"></i>
+          {{ "header.order" | translate }}</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user_role == 'seller'">
+        <a class="nav-link" routerLink="/seller/product"
+          ><i class="fa-solid fa-circle-plus"></i>
+          {{ "header.product" | translate }}</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user_role == 'admin'">
+        <a class="nav-link" routerLink="/admin/product"
+          ><i class="fa-solid fa-circle-plus"></i>
+          {{ "header.product" | translate }}</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="user_role == 'admin'">
+        <a class="nav-link" routerLink="/admin/user"
+          ><i class="fa-solid fa-user-shield"></i>
+          {{ "header.user" | translate }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/sign-in"
+          href="#pageSubmenu"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="nav-link dropdown-toggle"
+          ><i class="fa fa-cart-shopping"></i> Buy</a
+        >
+      </li>
+      <li>
+        <a href="#"><i class="fa-solid fa-money-bill-trend-up"></i> Sell</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled components" *ngIf="!logged_in">
+      <p><b>PERSONALIZATION</b></p>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sign-in"
+          ><i class="fa-solid fa-user"></i> Profile</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          ><i class="fa-solid fa-envelopes-bulk"></i> Join Mail List</a
+        >
+      </li>
+    </ul>
+    <ul class="list-unstyled components" *ngIf="logged_in">
+      <li class="nav-item">
+        <a class="nav-link sim-pointer" routerLink="/my-profile"
+          ><i class="fa-solid fa-address-card"> </i
+          >{{ "header.my_profile" | translate }}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          ><i class="fa-solid fa-envelopes-bulk"></i> Join Mail List</a
+        >
+      </li>
+    </ul>
+
+    <ul class="list-unstyled components">
+      <p><b>SETTINGS</b></p>
+      <li>
+        <a
+          href="#pageSubmenu"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle"
+          ><i class="fa-solid fa-gear"></i> Settings</a
+        >
+        <ul class="collapse list-unstyled" id="pageSubmenu"></ul>
+      </li>
+      <li>
+        <a href="#"><i class="fa-solid fa-circle-info"></i> Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact-us"
+          ><i class="fa-regular fa-address-book"></i>
+          {{ "header.contact_us" | translate }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="{{ 'header.search' | translate }}"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            {{ "header.search" | translate }}
+          </button>
+        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/sign-in"
+                ><i class="fa-solid fa-right-to-bracket"></i>
+                {{ "header.signin" | translate }}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/sign-up"
+                ><i class="fa-solid fa-user-plus"></i>
+                {{ "header.signup" | translate }}</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto" *ngIf="logged_in">
+            <li class="nav-item">
+              <a class="nav-link sim-pointer" routerLink="/my-profile"
+                ><i class="fa-solid fa-address-card"></i>
+                {{ "header.my_profile" | translate }}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sim-pointer" (click)="logOut()"
+                ><i class="fa-solid fa-right-from-bracket"></i>
+                {{ "header.signout" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

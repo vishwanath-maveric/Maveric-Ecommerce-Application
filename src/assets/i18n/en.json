@@ -1,0 +1,29 @@
+{
+    "intro": "Welcome to the world of Internationalization",
+    "proj_name": "Welcome to Maveric Ecommerce Portal",
+    "project_short_desc": "This project is like ecommerce portal where some of the user(Seller) who want to sell the product and services using this and some of the user(Buyer/End User) who needs the product they can buy from the user(Seller). On top of this two user there is another user(Admin) we named as admin, who have control all the operation like, he/she can delete the product, buyer, seller, can edit and update also. ",
+    "view_detail_doc_btn": "Platform to enable maveric employees to buy and sell items among themselves",
+    "header": {
+        "ecommerce": "Maveric Ecommerce",
+        "lang_en": "English",
+        "home": "Home",
+        "service": "Service",
+        "about_us": "About",
+        "contact_us": "Contact",
+        "order": "Order",
+        "product": "Product",
+        "user": "User",
+        "search": "Search",
+        "signin": "Sign In",
+        "signup": "Sign Up",
+        "my_profile": "My Profile",
+        "logout": "LogOut",
+        "signout": "SignOut"
+    },
+    "footer": {
+        "year": "2022",
+        "d&d": "Maveric Systems Pvt Ltd.",
+        "my_name": "Vishwanath Hegde",
+        "tc": "Terms and Conditions"
+    }
+}
